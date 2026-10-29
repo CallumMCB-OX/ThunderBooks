@@ -1,0 +1,10 @@
+# Scientific libraries used by both notebooks
+numpy
+scipy
+matplotlib
+seaborn
+Pillow  # inline GIF animations; no ffmpeg required
+
+# Jupyter interface and Python notebook kernel
+jupyterlab
+ipykernel

@@ -1,0 +1,11 @@
+# Local environments and editor state
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# Personal exports and app screenshots
+/Synchrotron_Notes_with_Figures.zip
+/output/figures/notability_typed_note_preview.png
