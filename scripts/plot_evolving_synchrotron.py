@@ -55,7 +55,7 @@ for size,color in zip(sizes,colors):
 ax.set_xscale('log');ax.set_yscale('log')
 ax.set_xlim(.3,400);ax.set_ylim(1e-3,700)
 ax.set_xlabel(r'Observing frequency, $\nu$ (GHz)',labelpad=12)
-ax.set_ylabel(r'Observed flux density, $F_\nu$ (mJy)',labelpad=10)
+ax.set_ylabel(r'Observed flux density, $S_\nu$ (mJy)',labelpad=10)
 ax.set_title('Evolving synchrotron spectrum',loc='left',pad=31)
 ax.text(0,1.035,'van der Laan expansion • log–log axes',transform=ax.transAxes,
         color='#718096',fontsize=12)
@@ -79,11 +79,11 @@ ax.text(.035,.93,'As the source expands:\nthe peak moves to lower frequency\nand
  transform=ax.transAxes,color='#405267',fontsize=12,va='top',linespacing=1.5,
  bbox={'facecolor':'white','edgecolor':'none','pad':3})
 
-ax.annotate('Optically thick\n'+r'$F_\nu\propto\nu^{5/2}$',
+ax.annotate('Optically thick\n'+r'$S_\nu\propto\nu^{5/2}$',
  xy=(.8,float(spectrum(.8e9,1)[0])),xytext=(.035,.45),textcoords='axes fraction',
  color='#405267',fontsize=13,
  arrowprops={'arrowstyle':'-','color':'#718096','lw':1.1})
-ax.annotate('Optically thin\n'+r'$F_\nu\propto\nu^{-0.75}$',
+ax.annotate('Optically thin\n'+r'$S_\nu\propto\nu^{-0.75}$',
  xy=(110,float(spectrum(110e9,2)[0])),xytext=(.76,.25),textcoords='axes fraction',
  color='#405267',fontsize=13,
  arrowprops={'arrowstyle':'-','color':'#718096','lw':1.1})

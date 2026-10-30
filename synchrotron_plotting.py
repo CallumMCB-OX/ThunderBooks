@@ -69,7 +69,7 @@ def plot_spectra(frequency_hz, fluxes, labels, title='Evolving synchrotron spect
         for values, label, color, style in zip(fluxes, labels, COLORS, LINESTYLES):
             ax.loglog(np.asarray(frequency_hz) / 1e9, values, color=color,
                       ls=style, lw=2.2, label=label)
-        ax.set(xlabel='Frequency (GHz)', ylabel='Flux density (mJy)', title=title)
+        ax.set(xlabel='Frequency (GHz)', ylabel=r'Flux density, $S_\nu$ (mJy)', title=title)
         ax.grid(which='major', color='#e1e7ed')
         ax.legend()
         return _finish(fig, savepath)
@@ -86,7 +86,7 @@ def _lightcurve_axes(axes, times, fluxes, labels, *, draw_curves, views=("linear
             ax.set_xscale('log')
         if logy:
             ax.set_yscale('log')
-        ax.set(xlabel='Time (s)', ylabel='Flux density (mJy)', title=title)
+        ax.set(xlabel='Time (s)', ylabel=r'Flux density, $S_\nu$ (mJy)', title=title)
         ax.set_xlim(times[0], times[-1])
         ax.set_ylim((fluxes.min() * 0.5 if logy else 0), fluxes.max() * 1.6)
         ax.grid(which='major', color='#e1e7ed', lw=0.8)
@@ -233,7 +233,7 @@ def animate_evolution(times, frequency_hz, spectra, observing_hz, lightcurves,
                      x=0.075, ha='left', y=0.97, fontsize=16, fontweight='bold')
         status = fig.text(0.075, 0.91, '', color='#405267')
         spectrum_ax.set(xscale='log', yscale='log', xlabel='Frequency (GHz)',
-                        ylabel='Flux density (mJy)', title='Spectrum at the current time')
+                        ylabel=r'Flux density, $S_\nu$ (mJy)', title='Spectrum at the current time')
         spectrum_ax.set_xlim(frequency_hz[[0, -1]] / 1e9)
         viewed = spectra[frames]
         spectrum_ax.set_ylim(min(viewed.max() * 1e-7, lightcurves.min() * .5), viewed.max() * 2)

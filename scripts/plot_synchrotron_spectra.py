@@ -52,7 +52,7 @@ BLUE='#2167b0'; TEAL='#087f8c'; ORANGE='#c66b16'; GRAY='#718096'
 def draw(ax,log=False):
  ax.plot(nu/1e9,f,color=BLUE,lw=3,zorder=4)
  ax.set_xlabel(r'Observing frequency, $\nu$ (GHz)',labelpad=12)
- ax.set_ylabel(r'Observed flux density, $F_\nu$ (mJy)',labelpad=10)
+ ax.set_ylabel(r'Observed flux density, $S_\nu$ (mJy)',labelpad=10)
  ax.set_title('Synchrotron spectrum',loc='left',pad=30)
  ax.text(0,1.035,'Log–log axes' if log else 'Linear axes',transform=ax.transAxes,
          fontsize=12,color=GRAY)
@@ -70,11 +70,11 @@ def draw(ax,log=False):
   ax.grid(which='major',color='#e1e7ed',lw=0.9)
   ax.xaxis.set_minor_locator(LogLocator(base=10,subs=np.arange(2,10)*0.1))
   ax.xaxis.set_minor_formatter(NullFormatter())
-  ax.annotate('Optically thick\n'+r'$\tau_\nu\gg1$'+ '\n'+r'$F_\nu\propto\nu^{5/2}$',
+  ax.annotate('Optically thick\n'+r'$\tau_\nu\gg1$'+ '\n'+r'$S_\nu\propto\nu^{5/2}$',
    xy=(nu1*.23/1e9,float(flux(nu1*.23))),xytext=(0.04,0.63),
    textcoords='axes fraction',color=TEAL,fontsize=13,
    arrowprops={'arrowstyle':'-','color':TEAL})
-  ax.annotate('Optically thin\n'+r'$\tau_\nu\ll1$'+'\n'+r'$F_\nu\propto\nu^{-0.75}$',
+  ax.annotate('Optically thin\n'+r'$\tau_\nu\ll1$'+'\n'+r'$S_\nu\propto\nu^{-0.75}$',
    xy=(nu1*9/1e9,float(flux(nu1*9))),xytext=(0.69,0.35),
    textcoords='axes fraction',color=ORANGE,fontsize=13,
    arrowprops={'arrowstyle':'-','color':ORANGE})
@@ -84,11 +84,11 @@ def draw(ax,log=False):
  else:
   ax.set_xlim(0,nu[-1]/1e9);ax.set_ylim(0,fpeak*1.3)
   ax.grid(axis='y',color='#e1e7ed',lw=.9)
-  ax.annotate('Self-absorbed rise\n'+r'$F_\nu\propto\nu^{5/2}$',
+  ax.annotate('Self-absorbed rise\n'+r'$S_\nu\propto\nu^{5/2}$',
    xy=(nu1*.7/1e9,float(flux(nu1*.7))),xytext=(.20,.54),
    textcoords='axes fraction',color=TEAL,fontsize=13,
    arrowprops={'arrowstyle':'-','color':TEAL})
-  ax.annotate('Optically thin decline\n'+r'$F_\nu\propto\nu^{-0.75}$',
+  ax.annotate('Optically thin decline\n'+r'$S_\nu\propto\nu^{-0.75}$',
    xy=(nu1*16/1e9,float(flux(nu1*16))),xytext=(.58,.38),
    textcoords='axes fraction',color=ORANGE,fontsize=13,
    arrowprops={'arrowstyle':'-','color':ORANGE})
