@@ -35,13 +35,10 @@ cells before showing rich HTML; the GIF can also be opened directly.
 
 ## Notes and generated files
 
-- `Synchrotron_Emission.md`: the current typed notes, with highlighted definitions,
-  boxed results, embedded plots and an animated GIF.
 - `output/figures/`: explanatory diagrams and reference images.
 - `output/graphs/`: plotted figures, SVGs, GIF animations, and controlled HTML players.
 - `scripts/`: reproducible standalone scripts for the labelled note graphs.
 
 Playback begins at 1 second. The spectrum's frequency grid includes the early
 high-frequency turnover, and the linear light-curve view includes an early-time
-inset. Markdown viewers that do not animate GIFs can use the linked HTML player.
-Keep the notes and `output/` together so relative image links continue to work.
+inset. The HTML player provides playback controls alongside the saved GIF.

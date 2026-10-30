@@ -9,3 +9,6 @@ __pycache__/
 # Personal exports and app screenshots
 /Synchrotron_Notes_with_Figures.zip
 /output/figures/notability_typed_note_preview.png
+
+# Local draft notes, pending review
+/Synchrotron_Emission.md
